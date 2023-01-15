@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio website</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'poppins', 'Franklin Gothic Medium';
+			box-sizing: border-box;
+		}
+
+		body{
+			background: #a37f56;
+			color: #fff;
+		}
+
+		#header{
+			width: 100%;
+			height: 100vh;
+			background-image: url(images/background.jpg.jpeg);
+			background-size: cover;
+			background-position: center;
+		}
+
+		.container{
+			padding: 10px 10%;
+		}
+
+		nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+
+		nav ul li{
+			display: inline-block;
+			list-style: none;
+			margin: 10px 20px;
+		}
+
+		nav ul li a{
+			color: #000000;
+			text-decoration: none;
+			font-size: 18px;
+			margin:0 10px;
+			line-height:30px;
+			position: relative;
+		}
+
+		nav ul li a::after{
+			content: '';
+			width: 0;
+			height: 3px;
+			background: #000000;
+			position: absolute;
+			left: 0;
+			bottom: -6px;
+			transition: 0.5s;
+		}
+
+		nav ul li a:hover::after{
+			width: 100%;
+		}
+
+
+		.header-text{
+			margin-top: 15%;
+			font-size: 30px;
+		}
+
+		.header-text h1{
+			font-size: 60px;
+			margin-top: 20px;
+		}
+
+		.header-text h1 span{
+			color: #331a08;
+		}
+
+
+		/* ---------------about---------------- */
+		#about{
+			padding: 80px 0;
+			color: #fff;
+		}
+
+		.row{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+
+		.about-col-1{
+			flex-basis: 35%;
+		}
+
+		.about-col-1 img{
+			width: 100%;
+			border-radius: 0;
+		}
+
+		.about-col-2{
+			flex-basis: 60%;
+		}
+
+		.sub-title{
+			font-size: 60px;
+			font-weight: 550;
+			color: #331a08;
+		}
+
+		.tab-titles{
+			display: flex;
+			margin: 20px 0 40px;
+		}
+
+		.tab-links{
+			margin-right: 50px;
+			font-size: 18px;
+			font-weight: 500;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.tab-links::after{
+			content: '';
+			width: 0;
+			height: 3px;
+			background: #664b38;
+			position: absolute;
+			left: 0;
+			bottom: -8px;
+			transition: 0.5s;
+		}
+
+		.tab-links.active-link::after{
+			width: 50%;
+		}
+
+		.tab-contents ul li{
+			list-style: none;
+			margin: 10px 0;
+		}
+
+		.tab-contents ul li span{
+			color: #331a08;
+			font-size: 14px;
+		}
+
+		.tab-contents{
+			display: none;
+		}
+
+		.tab-contents.active-tab{
+			display: block;
+		}
+
+		/* ---------------family--------------- */
+		#family{
+			padding: 20px 0;
+		}
+
+		.family-list{
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-gap: 40px;
+			margin-top: 50px;
+		}
+
+		.family-list div{
+			background: #331a08;
+			padding: 40px;
+			font-size: 18px;
+			font-weight: 300;
+			border-radius: 10px;
+		}
+
+		.family-list div h2{
+			font-size: 18px;
+			font-weight: 500;
+			margin-bottom: 15px;
+			text-align: center;
+			color: #bfa26e;
+		}
+
+		.family-list p{
+			text-align: center;
+		}
+
+		.family-list div a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 12px;
+			margin-top: 20px;
+			display: inline-block;
+
+		}
+		
+		.btn
+		
+		{
+			display: block;
+			margin: 50px auto;
+			width: fit-content;
+			border: 1px solid #331a08;
+			padding: 14px 50px;
+			border-radius: 6px;
+			text-decoration: none;
+			color: #fff;
+		}
+		
+
+		.btn:hover{
+			background: #331a08;
+		}
+
+		footer{
+			background:#331a08;
+			color:#fff;
+			padding:15px 50px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#family">Family</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+					<li><a href="#favpoem">Fav Poem</a></li>
+				</ul>
+			</nav>
+			<div class="header-text">
+				<p>This is my Homepage!</p>
+				<h1>Hello, I'm <span>Amissya</span> and this is my<br> Personal Portfolio.</h1>
+
+			</div>
+		</div>
+	</div>
+	<!-- about -->
+
+	<div id="about">
+		<div class="container">
+			<div class="row">
+				<div class="about-col-1">
+					<img src="images/about.jpg" alt="Ami">
+				</div>
+				<div class="about-col-2">
+					<h1 class="sub-title">About Me</h1>
+
+					<div class="tab-titles">
+						<p class="tab-links active-link" onclick="opentab('biodata')">Biodata</p>
+						<p class="tab-links" onclick="opentab('experience')">Experience</p>
+						<p class="tab-links" onclick="opentab('education')">Education</p>
+						<p class="tab-links" onclick="opentab('skills')">Skills</p>
+
+					</div>
+					<div class="tab-contents active-tab" id="biodata">
+						<ul>
+							<li><span>Full Name</span><br>Nur Amissya Balqis Binti Amran</li>
+							<li><span>No. ID</span><br>020425-02-0196</li>
+							<li><span>Id Student</span><br>2020473104</li>
+							<li><span>Class</span><br>N5IM1105A</li>
+							<li><span>Mother's Name</span><br>Nor Aisyah Yaacob</li>
+							<li><span>Father's Name</span><br>Amran Abdul Razak</li>
+							<li><span>Birth Date</span><br>25th April 2002</li>
+							<li><span>Birth Place</span><br>Hospital Besar Alor Setar, Kedah Malaysia.</li>
+							<li><span>Tel. Number</span><br>017-7751944</li>
+							<li><span>E-mail</span><br>missyblqis@gmail.com</li>
+							<li><span>Home Address</span><br>F-07-07 Blok F Apartment Taman Medan Jaya, Jalan PJS 2/1 46000 Petaling Jaya, Selangor.</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="experience">
+						<ul>
+							<li><span>2012 - 2014</span><br>School Librarian of SKJS (1).</li>
+							<li><span>2016 - 2019</span><br>School Prefect of Taman Petaling Girl High School.</li>
+							<li><span>2020 - Current</span><br>Komander Kesatria UiTM Kampus Rembau.</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="education">
+						<ul>
+							<li><span>2014</span><br>Ujian Pencapaian Sekolah Rendah (UPSR)</li>
+							<li><span>2017</span><br>Pentaksiran Tingkatan 3 (PT3)</li>
+							<li><span>2019</span><br>Sijil Pelajaran Malaysia (SPM)</li>
+							<br>
+							<li><span>2009 - 2014</span><br>Sekolah Kebangsaan Jalan Selangor (1), Petaling Jaya.</li>
+							<li><span>2015 - 2019</span><br>Sekolah Menengah Kebangsaan (P) Taman Petaling.</li>
+							<li><span>2020 - Current</span><br>UiTM Cawangan Negeri Sembilan, Kampus Rembau</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="skills">
+						<ul>
+							<li><span>Adobe Photoshop</span><br>90%</li>
+							<li><span>Adobe Premiere Pro</span><br>90%</li>
+							<li><span>Microsoft Excel</span><br>80%</li>
+							<li><span>Adobe Illustrator</span><br>90%</li>
+						</ul>
+						</div>
+						</div>
+</div>
+<!-- family -->
+<div id="family">
+	<div class="container">
+		<h1 class="sub-title">Family Members</h1>
+		<div class="family-list">
+			<div>
+				<h2>Father</h2>
+				<p>Amran</p>
+			</div>
+			<div>
+				<h2>Mother</h2>
+				<p>Aisyah</p>
+			</div>
+			<div>
+				<h2>Second Sister</h2>
+				<p>Aina Nafisa</p>
+			</div>
+			<div>
+				<h2>Third Sister</h2>
+				<p>Siti Humaira</p>
+			</div>
+			<div>
+				<h2>Younger Brother</h2>
+				<p>Hadif Uzair</p>
+			</div>
+			<div>
+				<h2>Youngest Sister</h2>
+				<p>Sumayyah</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Gallery -->
+<div id="gallery">
+	<div class="container">
+		<h1 class="sub-title">Gallery</h1>
+			<p> 
+				<i>"As the sun dips down over the horizon, sunlight has to pass through a thicker layer of the atmosphere compared to the daytime. This causes the blue light that is seen during the daytime to be scattered away from our eyes, allowing more orange and red light to pass through."-Duff</i>
+				</p>
+			<br>
+			<img src="images/langit1.jpg.jpeg">
+			<img src="images/langit2.jpg.jpeg">
+			<img src="images/langit3.jpg.jpeg">
+			<img src="images/langit4.jpg.jpeg">
+			<img src="images/langit5.jpg.jpeg">
+			<img src="images/langit8.jpg.jpeg">
+			<img src="images/langit7.jpg.jpeg">
+	</div>
+
+	<!-- Fav Poem -->
+	<div id="favpoem">
+	<div class="container">
+	<h1 class="sub-title">Fav Poem</h1>
+
+
+	<p>
+		
+		<i> She Walks in Beauty </i>by Lord Byron.
+	
+	</p>
+	<br>
+	<br>
+	<p> 
+		<font color="#331a08">"She walks in beauty, like the night</font></p>
+	<br>
+	<p> 
+		<font color="#331a08">Of cloudless climes and starry skies;</font></p>
+	<br>
+	<p> 
+		<font color="#331a08">And all that is best of dark and bright</font></p>
+	<br>
+	<p> 
+		<font color="#331a08">Meet in her <i>aspect and her eyes;</i></font></p>
+	<br>
+	<p> 
+		<font color="#331a08">Thus mellowed to that tender light </font></p>
+	<br>
+	<p> 
+		<font color="#331a08">Which heaven to gaudy day denies." </font></p>
+	<br>
+
+		<a href="#" class="btn">Back to Top</a>
+</div>
+
+
+<div>
+<a href="https://www.instagram.com/ivysphrmsy/"><img src="images/Instagram_logo.png"></a>
+<a href="tel:+60177751944"><img src="images/whatsapp_logo.png"></a>
+<a href="mailto:missyblqis@gmail.com"><img src="images/gmail_logo.png"></a>
+</div>
+
+<br>
+<br>
+
+<script>
+
+	var tablinks = document.getElementsByClassName("tab-links");
+	var tabcontents = document.getElementsByClassName("tab-contents");
+	
+	function opentab(tabname){
+		for(tablink of tablinks){
+			tablink.classList.remove("active-link");
+		}
+		for(tabcontent of tabcontents){
+			tabcontent.classList.remove("active-tab");
+		}
+		event.currentTarget.classList.add("active-link");
+		document.getElementById(tabname).classList.add("active-tab");
+	}
+					
+</script>
+
+<footer>
+<p>ALL RIGHT RESERVED BY NUR AMISSYA BALQIS BINTI AMRAN</p>
+</footer>
+
+</body>
+</html>
